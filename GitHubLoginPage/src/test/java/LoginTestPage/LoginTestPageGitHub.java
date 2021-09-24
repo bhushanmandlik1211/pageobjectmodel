@@ -1,5 +1,7 @@
 package LoginTestPage;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import Base.BaseClass;
@@ -8,11 +10,12 @@ import Login.LoginPageGitHub;
 public class LoginTestPageGitHub extends BaseClass  {
 	
 	@Test(priority=3)
-	 public void login()
+	 public void login() throws IOException, InterruptedException
 	 {
 		LoginPageGitHub login=new LoginPageGitHub(driver);
 		login.credentials();
 		login.click_signin();
+		screenShot(driver);
 	 }
 	
 	@Test(priority=1)

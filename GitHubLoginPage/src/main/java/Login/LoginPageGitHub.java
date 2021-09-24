@@ -33,8 +33,8 @@ public class LoginPageGitHub extends BaseClass {
 	
 	public void credentials()
 	{
-		username.sendKeys("bhushanmandlik1211@gmail.com");
-		password.sendKeys("bhushan");
+		username.sendKeys(prop.getProperty("uname"));
+		password.sendKeys(prop.getProperty("pass"));
 	}
 
 	public void click_signin()
