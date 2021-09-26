@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -45,9 +46,16 @@ public class BaseClass {
 	}
 	public static void screenShot(WebDriver driver) throws IOException,InterruptedException
 	{
-		TakesScreenshot ts=((TakesScreenshot)driver);
+		Date d=new Date();
+		String date=d.toString();
+		System.out.println(date);
+		
+		String new_date=date.replaceAll(":", "_");
+		System.out.println(new_date);
+		
+		TakesScreenshot ts=(TakesScreenshot)driver;
 		File src=ts.getScreenshotAs(OutputType.FILE);
-		File dest=new File("D:\\Bhushan\\pageobjectmodel1\\GitHubLoginPage\\target\\screenshot");
+		File dest=new File(".\\Screenshot\\"+new_date+"_image.png");
 		FileUtils.copyFile(src, dest);
 	}
 	
